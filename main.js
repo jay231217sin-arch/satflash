@@ -16,24 +16,7 @@ fetch('dutput.csv')
         generateFlashcards(flashcardsData);
     })
     .catch(error => console.error('Error fetching the CSV file:', error));
-
-// CSV Parsing Function (semicolon-separated values)
-function parseCSV(data) {
-    const rows = data.split('\n').slice(1); // Skip header row
-    return rows.map(row => {
-        const [vocab, definition, example] = row.split(';');
-        return { vocab, definition, example };
-    });
-}
-
-// Generate flashcards dynamically
-function generateFlashcards(data) {
-    flashcardsContainer.innerHTML = '';
-    data.forEach(item => {
-        const flashcard = document.createElement('div');
-        flashcard.classList.add('flashcard');
-
-         // Add a data-search attribute with all searchable content
+tent
          flashcard.setAttribute('data-search', 
             `${item.vocab.toLowerCase()} ${item.definition.toLowerCase()} ${item.example.toLowerCase()}`
         );
